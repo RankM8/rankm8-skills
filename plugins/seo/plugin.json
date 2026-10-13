@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "seo",
+  "version": "1.0.0",
+  "description": "SEO mit RankM8 für Einsteiger und Profis: Websites prüfen, Projekte einrichten, Suchbegriffe, Texte, lokale und KI-Sichtbarkeit, Berichte.",
+  "author": {
+    "name": "RankM8"
+  },
+  "repository": "https://github.com/RankM8/rankm8-skills",
+  "keywords": [
+    "seo",
+    "geo",
+    "rankm8",
+    "keywords",
+    "lokal"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "SEO",
+        "shortDescription": "Mit RankM8 bei Google und in KI-Antworten gefunden werden",
+        "developerName": "RankM8",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "rankm8",
+  "owner": { "name": "RankM8" },
+  "metadata": { "description": "Plugins von RankM8: SEO und Sichtbarkeit in KI-Antworten mit der RankM8-Verbindung." },
+  "plugins": [
+    {
+      "name": "seo",
+      "source": "./plugins/seo",
+      "description": "SEO mit RankM8 für Einsteiger und Profis: Websites in Minuten prüfen und als Report-Link teilen, Projekte einrichten, Suchbegriffe finden, Texte erstellen, lokal und in KI-Antworten sichtbar werden, Monatsberichte, SEO als Dienstleistung verkaufen.",
+      "category": "productivity"
+    }
+  ]
+}

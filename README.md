@@ -1,32 +1,38 @@
 # RankM8 Skills
 
-Workflow-Skills für [RankM8](https://app.rankm8.com) — SEO-Analyse und Content-Optimierung über das Model Context Protocol (MCP). Die Skills orchestrieren komplette SEO-Workflows über die 53 MCP-Tools des RankM8-Servers: Projekte anlegen und einrichten, technische Site-Audits fahren, Keywords recherchieren und verwalten, Content generieren und Performance-Reports erstellen.
+Plugin-Marketplace **`rankm8`** mit dem Plugin **`seo`**: SEO und Sichtbarkeit in KI-Antworten mit
+[RankM8](https://app.rankm8.com), für Einsteiger und Profis. Die Skills steuern den RankM8-Server
+über das Model Context Protocol (MCP): Websites in Minuten prüfen, Projekte einrichten, technische
+Fehler finden, Suchbegriffe recherchieren, Texte erstellen, lokal und in KI-Antworten sichtbar
+werden, Monatsberichte schreiben und SEO als Dienstleistung verkaufen.
 
-## Setup (2 Befehle)
+Ein RankM8-Konto wird vorausgesetzt.
+
+## Installation
+
+**Claude Code (empfohlen, mit Updates und RankM8-Verbindung):**
 
 ```bash
-# 1. RankM8-MCP verbinden (OAuth-Autorisierung öffnet sich im Browser)
+/plugin marketplace add RankM8/rankm8-skills
+/plugin install seo@rankm8
+```
+
+Danach `/mcp` → `rankm8` → anmelden, dann den Skill **`seo-setup`** aufrufen. Updates: `/plugin` →
+Marketplaces → `rankm8` → Auto-Update einschalten.
+
+**Codex:** Marketplace `RankM8/rankm8-skills` hinzufügen und unter `/plugins` installieren.
+
+**Cursor, Windsurf und andere Agenten (nur Skills):**
+
+```bash
+# 1. RankM8-MCP verbinden (Anleitung je Werkzeug in der App unter /mcp), z. B. Claude Code ohne Plugin:
 claude mcp add --transport http rankm8 https://app.rankm8.com/_mcp/v1
 
-# 2. Skills installieren
+# 2. Alle Skills installieren (immer die neueste Version aus dem Plugin)
 npx skills add RankM8/rankm8-skills --all
 ```
 
-Fertig — die Skills nutzen die MCP-Verbindung, es ist kein weiteres Login und keine CLI nötig. Ein RankM8-Konto wird vorausgesetzt.
-
-## Die Skills
-
-| Skill | Was er tut | MCP-Tools |
-|-------|------------|-----------|
-| `rankm8-project-setup` | Legt aus einer URL ein komplettes Projekt an: Website-Analyse, Seiten-Discovery, Crawl, Keywords mit Suchvolumen, Analyse, Konkurrenten | 10 |
-| `rankm8-site-audit` | Fährt technische SEO-Audits pro Seite, pollt den Job, priorisiert Issues und führt durch die Behebung | 11 |
-| `rankm8-content-pipeline` | Analyse-Plan → Outline → fertiger Artikel, inkl. Meta-Tags und AI-Bildern | 7 |
-| `rankm8-keyword-research` | Findet Keyword-Chancen mit echtem Suchvolumen und SERP-Konkurrenzanalyse, importiert und verknüpft sie | 8 |
-| `rankm8-reporting` | Fasst Search-Console- und Google-Business-Daten zu einem Monats-Report zusammen | 4 |
-
-Typischer Ablauf für ein neues Projekt: `rankm8-project-setup` → `rankm8-site-audit` → `rankm8-keyword-research` → `rankm8-content-pipeline` → monatlich `rankm8-reporting`.
-
-### Einzelne Skills installieren
+Einzelne Skills:
 
 ```bash
 npx skills add RankM8/rankm8-skills --skill rankm8-site-audit
@@ -34,16 +40,75 @@ npx skills add RankM8/rankm8-skills --list        # nur anzeigen, nichts install
 npx skills add RankM8/rankm8-skills --all -g      # global statt projektweit
 ```
 
+Wer von `npx skills` auf das Plugin umsteigt, entfernt die alten Kopien (der Skill `seo-setup` hilft
+dabei), sonst sind die Skills doppelt vorhanden.
+
+**claude.ai / Claude App:** Einstellungen → Connectors → eigenen Connector mit der Adresse
+`https://app.rankm8.com/_mcp/v1`. Die Tools beschreiben sich selbst; Skills lassen sich zusätzlich
+als Datei hochladen.
+
+## Die Skills
+
+**Einstieg und Wissen**
+
+| Skill | Was er tut |
+|-------|------------|
+| `seo` | Einstieg: fragt das Ziel ab und leitet an den passenden Skill weiter |
+| `seo-setup` | RankM8-Verbindung prüfen, alte Kopien aufräumen, Credits erklären |
+| `seo-grundlagen` | SEO und KI-Sichtbarkeit einfach erklärt, mit Glossar |
+
+**Prüfen und Einrichten**
+
+| Skill | Was er tut | Credits |
+|-------|------------|---------|
+| `seo-schnellcheck` | Jede Website ohne Projekt prüfen; privater Report-Link für den Inhaber | ja |
+| `rankm8-project-setup` | Projekt aus einer URL komplett einrichten: Seiten, Crawl, Suchbegriffe, Analyse, Mitbewerber | ja |
+| `rankm8-site-audit` | Technische Audits pro Seite, Probleme priorisieren, Status pflegen | ja |
+
+**Verbessern**
+
+| Skill | Was er tut | Credits |
+|-------|------------|---------|
+| `rankm8-keyword-research` | Suchbegriffe mit echtem Suchvolumen finden, importieren, analysieren, Seiten zuordnen | ja |
+| `rankm8-content-pipeline` | Analyse-Plan → Gliederung → fertiger Text, mit Meta-Angaben und Bildern | ja |
+| `seo-lokal` | Google-Unternehmensprofil, Kartenbereich, Bewertungen, Standortseiten | teils |
+| `seo-geo` | In ChatGPT, Perplexity und Google-KI sichtbar werden: KI-Crawler, strukturierte Daten, `llms.txt` | teils |
+| `seo-umsetzen` | Verbesserungen im Code oder im Baukasten einbauen, Audit-Punkte abhaken | teils |
+
+**Berichten und Verkaufen**
+
+| Skill | Was er tut | Credits |
+|-------|------------|---------|
+| `rankm8-reporting` | Monatsbericht aus Search Console, Unternehmensprofil und Suchbegriffen | nein |
+| `seo-verkaufen` | SEO-Pakete schnüren, Preis kalkulieren, Angebot schreiben, Erstkontakt | nein |
+
+Typischer Ablauf für eine eigene Website: `seo-schnellcheck` → `rankm8-project-setup` →
+`rankm8-site-audit` → `seo-umsetzen` → `rankm8-keyword-research` → `rankm8-content-pipeline` →
+monatlich `rankm8-reporting`. Lokale Betriebe zusätzlich `seo-lokal`.
+
 ## Credits
 
-MCP hat kein Plan-Limit — **Credits** sind die einzige Nutzungsbremse. Kostenlos sind alle Lese- und Verwaltungs-Tools (Projekte, Seiten, Keywords, Audit-Ergebnisse, Integrations-Daten). Credits verbrauchen: Website-Analyse, Sitemap-Scrape, Seiten-Crawl, Keyword-Metriken und -Analyse, Site-Audit, SERP-/Keyword-Research und alle Content-/Bild-Generierungen. Die Skills fragen vor jedem kostenpflichtigen Schritt nach.
+MCP hat kein Plan-Limit; **Credits** sind die einzige Nutzungsbremse. Kostenlos sind alle Lese- und
+Verwaltungs-Tools. Credits verbrauchen: Website-Analyse, Seiten finden und lesen, Suchbegriff-Daten
+und -Analyse, Site-Audit, Schnellcheck, Live-Suchergebnisse und alle Text- und Bild-Erstellungen. Die
+Skills fragen vor jedem kostenpflichtigen Schritt nach.
 
-## Clients ohne Skill-Support
+## Aufbau
 
-Alle MCP-Clients (ChatGPT, Gemini, Cursor, Windsurf, VS Code, JetBrains …) können den RankM8-Server ohne Skills nutzen — die Tools sind selbstbeschreibend. Setup-Anleitungen für alle Plattformen: in der App unter **`/mcp`**.
+```
+.claude-plugin/marketplace.json     Marketplace „rankm8“ (Claude Code)
+.agents/plugins/marketplace.json    Marketplace für Codex
+plugins/seo/
+├── .claude-plugin/plugin.json      Plugin-Manifest (Claude Code)
+├── plugin.json                     portables Manifest
+├── .mcp.json, mcp.json             RankM8-Verbindung
+└── skills/<skill>/SKILL.md         alle Skills (Quelle für Plugin und npx skills)
+```
 
 ## Hinweise
 
-- Die Skills sind client-agnostisch und beschreiben nur MCP-Tool-Aufrufe — sie funktionieren mit Claude Code, Cursor, Codex und allen weiteren von [skills.sh](https://skills.sh) unterstützten Agents.
-- Destruktive Aktionen (Keywords/Seiten löschen) verlangen serverseitig eine explizite Bestätigung; die Skills holen sie vorher beim Nutzer ein.
-- Änderungen an den Skills laufen über das RankM8-Hauptrepo und werden hierher gespiegelt.
+- Alle Skills nutzen nur die Agent-Skills-Standardfelder und funktionieren in Claude Code, Codex,
+  Cursor und allen von [skills.sh](https://skills.sh) unterstützten Agenten.
+- Destruktive Aktionen (Suchbegriffe oder Seiten löschen) verlangen serverseitig eine ausdrückliche
+  Bestätigung; die Skills holen sie vorher ein.
+- Dieses Repo ist die Quelle der Skills. Die RankM8-App verlinkt von der Seite `/mcp` hierher.

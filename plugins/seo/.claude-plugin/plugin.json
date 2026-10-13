@@ -1,0 +1,17 @@
+{
+  "name": "seo",
+  "version": "1.0.0",
+  "description": "SEO mit RankM8 für Einsteiger und Profis: Websites in Minuten prüfen, Projekte einrichten, Suchbegriffe finden, Texte erstellen, lokal und in KI-Antworten sichtbar werden, Ergebnisse berichten und SEO verkaufen – mit RankM8-Verbindung.",
+  "author": {
+    "name": "RankM8"
+  },
+  "repository": "https://github.com/RankM8/rankm8-skills",
+  "license": "UNLICENSED",
+  "keywords": [
+    "seo",
+    "geo",
+    "rankm8",
+    "keywords",
+    "lokal"
+  ]
+}
