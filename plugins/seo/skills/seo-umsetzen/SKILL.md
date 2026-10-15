@@ -1,6 +1,6 @@
 ---
 name: seo-umsetzen
-description: "Baut SEO-Verbesserungen direkt auf der Website ein: Seitentitel und Beschreibungen, Überschriften, Alt-Texte, strukturierte Daten (JSON-LD), robots.txt, llms.txt, Sitemap, Weiterleitungen, im Code (HTML, Astro, Next.js) oder als Klick-Anleitung für WordPress, Wix, Jimdo, Webflow und andere Baukästen. Verwenden bei „SEO umsetzen“, „bau das ein“, „Title ändern“, „Meta-Beschreibung einbauen“, „JSON-LD einbauen“, „Schema einbauen“, „Audit-Fehler beheben“, „robots.txt anpassen“ oder nach einem Schnellcheck oder Site-Audit."
+description: "Baut SEO-Verbesserungen direkt auf der Website ein: Seitentitel und Beschreibungen, Überschriften, Alt-Texte, strukturierte Daten (JSON-LD), robots.txt, llms.txt, Sitemap, Weiterleitungen, im Code (HTML, Astro, Next.js) oder als Klick-Anleitung für WordPress, Wix, Jimdo, Webflow und andere Baukästen. Verwenden bei „SEO umsetzen“, „SEO-Verbesserungen einbauen“, „Website SEO-optimieren“, „bau das ein“, „Title ändern“, „Meta-Beschreibung einbauen“, „JSON-LD einbauen“, „Schema einbauen“, „Audit-Fehler beheben“, „robots.txt anpassen“ oder nach einem Schnellcheck oder Site-Audit."
 ---
 
 # SEO umsetzen

@@ -43,6 +43,9 @@ Lesen und Verwalten ist kostenlos. Credits kosten: Website-Analyse, Seiten finde
 Suchbegriff-Daten und -Analyse, Site-Audit, Schnellcheck, Live-Suchergebnisse und alle Texte und
 Bilder. Die Skills nennen vor jedem kostenpflichtigen Schritt die Kosten und fragen nach.
 
+Das aktuelle Guthaben liefert kein RankM8-Tool; es steht in der RankM8-App (app.rankm8.com). Keine
+Zahl schätzen.
+
 ## 5. Alte Skill-Kopien aufräumen (nur Claude Code, Codex, Cursor)
 
 Wer die Skills früher mit `npx skills add RankM8/rankm8-skills` installiert hat, hat Kopien z. B. in
